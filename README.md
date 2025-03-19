@@ -1,10 +1,10 @@
-#iOS Developer Assignment: Send Money Application
+# iOS Developer Assignment: Send Money Application
 
-##Overview
+## Overview
 
 This assignment evaluates proficiency in iOS development, including UI design, data handling, application state management, and the implementation of dynamic features.
 
-##Technical Implementation
+## Technical Implementation
 
 - Dynamic UI: Parsed JSON data to generate UI elements dynamically.
 
@@ -20,7 +20,7 @@ This assignment evaluates proficiency in iOS development, including UI design, d
 
 - Architecture: Implemented the MVVM pattern for clean separation of UI and business logic.
 
-##Setup Instructions
+## Setup Instructions
 
 Clone the repository:
 
