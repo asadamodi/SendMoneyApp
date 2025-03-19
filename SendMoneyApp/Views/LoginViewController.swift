@@ -19,8 +19,6 @@ class LoginViewController: UIViewController {
     private let passwordTextField = UITextField()
     private let loginButton = UIButton()
     private let footerLabel = UILabel()
-
-    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()

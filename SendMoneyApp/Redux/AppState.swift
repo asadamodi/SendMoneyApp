@@ -13,8 +13,13 @@ struct SendMoneyState {
     var selectedServiceIndex: Int = 0
     var selectedProviderIndex: Int = 0
     var fieldValues: [String: String] = [:] // Store user-entered values
+    var selectedLanguage : Language = .en
 }
 
+enum Language{
+    case en
+    case ar
+}
 // Define actions to modify the state
 struct SelectServiceAction: Action {
     let index: Int
@@ -29,6 +34,9 @@ struct UpdateFieldValueAction: Action {
     let value: String
 }
 
+struct SelectedLanguageAction: Action {
+    let selectedLanguage : Language
+}
 // Define the reducer to handle state changes
 func sendMoneyReducer(action: Action, state: SendMoneyState?) -> SendMoneyState {
     var state = state ?? SendMoneyState()
@@ -43,6 +51,8 @@ func sendMoneyReducer(action: Action, state: SendMoneyState?) -> SendMoneyState 
         state.fieldValues.removeAll() // Clear previous input
     case let action as UpdateFieldValueAction:
         state.fieldValues[action.fieldName] = action.value
+    case let action as SelectedLanguageAction:
+        state.selectedLanguage = action.selectedLanguage
     default:
         break
     }

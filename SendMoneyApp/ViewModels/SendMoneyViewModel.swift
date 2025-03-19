@@ -35,4 +35,32 @@ class ServiceViewModel {
     func getSelectedProvider()->String?{
         services[store.state.selectedServiceIndex].providers[store.state.selectedProviderIndex].name
     }
+    
+    //TODO: Add dynamic validations from the json
+    func validateInputs()->String{
+        var alertMessage = ""
+        
+        let requiredFields = getRequiredFields()
+        for field in requiredFields {
+            let fieldName = field.label["en"] ?? "Unknown Field"
+            let fieldValue = store.state.fieldValues[field.name] ?? ""
+            let selectedLanguage = store.state.selectedLanguage
+            
+            if fieldValue.isEmpty {
+                let errorMessage: String
+                if let validationError = field.validationErrorMessage {
+                    switch validationError {
+                    case .string(let message):
+                        errorMessage = message
+                    case .dictionary(let messages):
+                        errorMessage = messages[selectedLanguage == .en ? "en" : "ar"] ?? ""
+                    }
+                } else {
+                    errorMessage = "Please enter value for: \(fieldName)"
+                }
+                alertMessage += "\(errorMessage)\n"
+            }
+        }
+        return alertMessage
+    }
 }

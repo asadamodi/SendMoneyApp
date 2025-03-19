@@ -9,6 +9,7 @@ import ReSwift
 import UIKit
 import SnapKit
 import iOSDropDown
+import Localize_Swift
 
 class SendMoneyViewController: UIViewController, StoreSubscriber {
     private let tableView = UITableView()
@@ -31,6 +32,8 @@ class SendMoneyViewController: UIViewController, StoreSubscriber {
     
     func newState(state: SendMoneyState) {
         tableView.reloadSections(IndexSet([1, 2]), with: .automatic)
+        navigationItem.rightBarButtonItem?.title = state.selectedLanguage == .ar ? "English" : "عربي"
+        
     }
     
     func setupUI(){
@@ -49,9 +52,30 @@ class SendMoneyViewController: UIViewController, StoreSubscriber {
         navigationController?.navigationBar.isTranslucent = false
         
         addBackButton()
+        // Add language switch button
+        let languageButton = UIBarButtonItem(title:store.state.selectedLanguage == .ar ? "English" : "عربي" , style: .plain, target: self, action: #selector(switchLanguageTapped))
+        languageButton.tintColor = .white
+        navigationItem.rightBarButtonItem = languageButton
+    }
+    @objc private func switchLanguageTapped(sender:UIBarButtonItem) {
+        //TODO: Need to add LanguageManager and make changes to app level
+        let newLanguage: Language = store.state.selectedLanguage == .en ? .ar : .en
+        store.dispatch(SelectedLanguageAction(selectedLanguage: newLanguage))
+        Localize.setCurrentLanguage((newLanguage == .ar) ? "ar" : "en")
+        // Adjust UI direction
+        let semanticAttribute: UISemanticContentAttribute = (newLanguage == .ar) ? .forceRightToLeft : .forceLeftToRight
+        UIView.appearance().semanticContentAttribute = semanticAttribute
+        UINavigationBar.appearance().semanticContentAttribute = semanticAttribute
+        UITableView.appearance().semanticContentAttribute = semanticAttribute
+        UILabel.appearance().semanticContentAttribute = semanticAttribute
+        UITextField.appearance().semanticContentAttribute = semanticAttribute
+        
+        // Apply changes and reload UI
+        view.setNeedsLayout()
+        navigationController?.navigationBar.setNeedsLayout()
+        tableView.reloadData()
         
     }
-    
     private func setupTableView() {
         view.addSubview(tableView)
         tableView.snp.makeConstraints { make in
@@ -88,31 +112,10 @@ class SendMoneyViewController: UIViewController, StoreSubscriber {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
+    //TODO: Save logic pending
     @objc private func sendButtonTapped() {
         view.endEditing(true)
-        var alertMessage = ""
-        
-        let requiredFields = viewModel.getRequiredFields()
-        for field in requiredFields {
-            let fieldName = field.label["en"] ?? "Unknown Field"
-            let fieldValue = store.state.fieldValues[field.name] ?? ""
-            
-            if fieldValue.isEmpty {
-                let errorMessage: String
-                if let validationError = field.validationErrorMessage {
-                    switch validationError {
-                    case .string(let message):
-                        errorMessage = message
-                    case .dictionary(let messages):
-                        errorMessage = messages["en"] ?? "Invalid input for \(fieldName)"
-                    }
-                } else {
-                    errorMessage = "Please enter value for: \(fieldName)"
-                }
-                alertMessage += "\(errorMessage)\n"
-            }
-        }
-        
+        let alertMessage = viewModel.validateInputs()
         if !alertMessage.isEmpty {
             showErrorAlert(title: "Validation Errors", message: alertMessage)
         }
@@ -150,7 +153,7 @@ extension SendMoneyViewController: UITableViewDataSource{
                 self?.tableView.reloadSections(IndexSet([2]), with: .automatic)
             }
         } else if indexPath.section == 1 {
-            cell.configure(placeholder: "Provider", value: viewModel.getSelectedProvider())
+            cell.configure(placeholder: "Provider".localized(), value: viewModel.getSelectedProvider())
             cell.valueTextField.optionArray = viewModel.getProvidersNames()
             cell.valueTextField.didSelect { [weak self] selectedText, index, id in
                 store.dispatch(SelectProviderAction(index: index))
@@ -160,9 +163,19 @@ extension SendMoneyViewController: UITableViewDataSource{
             let reqField = viewModel.getRequiredFields()[indexPath.row]
             cell.placeholderLabel.text = reqField.label["en"]
             cell.valueTextField.text = store.state.fieldValues[reqField.name]
-            cell.valueTextField.optionArray = []
             cell.valueTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingDidEnd)
             cell.valueTextField.tag = indexPath.row
+            if(reqField.type == "option"){
+                cell.valueTextField.optionArray = reqField.options?.compactMap{$0.label} ?? []
+                cell.valueTextField.didSelect { [weak self] selectedText, index, id in
+                    cell.valueTextField.text = selectedText
+                    self?.textFieldDidChange(cell.valueTextField)
+                }
+            }
+            else {
+                cell.valueTextField.optionArray = []
+            }
+           
             
         }
         return cell

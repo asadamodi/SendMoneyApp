@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C30220082D8AF44300910A03 /* Localize_Swift in Frameworks */ = {isa = PBXBuildFile; productRef = C30220072D8AF44300910A03 /* Localize_Swift */; };
+		C30B6C392D8B34E400BC4498 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C30B6C3B2D8B34E400BC4498 /* Localizable.strings */; };
 		C341D1102D888FA500F6D859 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C341D10F2D888FA500F6D859 /* AppDelegate.swift */; };
 		C341D1122D888FA500F6D859 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C341D1112D888FA500F6D859 /* SceneDelegate.swift */; };
 		C341D1142D888FA500F6D859 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C341D1132D888FA500F6D859 /* ViewController.swift */; };
@@ -49,6 +51,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C30220042D8AF30D00910A03 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
+		C30220052D8AF30D00910A03 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		C30B6C3A2D8B34E400BC4498 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C30B6C3C2D8B34E700BC4498 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C341D10C2D888FA500F6D859 /* SendMoneyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SendMoneyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C341D10F2D888FA500F6D859 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C341D1112D888FA500F6D859 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +86,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3FEBB872D89EBF700C60D1D /* iOSDropDown in Frameworks */,
+				C30220082D8AF44300910A03 /* Localize_Swift in Frameworks */,
 				C3FEBB6B2D88931100C60D1D /* ReSwift in Frameworks */,
 				C3FEBB722D88976B00C60D1D /* SnapKit in Frameworks */,
 			);
@@ -199,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				C3FEBB7D2D89D95200C60D1D /* services.json */,
+				C30B6C3B2D8B34E400BC4498 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -247,6 +255,7 @@
 				C3FEBB6A2D88931100C60D1D /* ReSwift */,
 				C3FEBB712D88976B00C60D1D /* SnapKit */,
 				C3FEBB862D89EBF700C60D1D /* iOSDropDown */,
+				C30220072D8AF44300910A03 /* Localize_Swift */,
 			);
 			productName = SendMoneyApp;
 			productReference = C341D10C2D888FA500F6D859 /* SendMoneyApp.app */;
@@ -318,12 +327,14 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = C341D1032D888FA500F6D859;
 			packageReferences = (
 				C341D13F2D888FF100F6D859 /* XCRemoteSwiftPackageReference "ReSwift" */,
 				C3FEBB702D88976B00C60D1D /* XCRemoteSwiftPackageReference "SnapKit" */,
 				C3FEBB852D89EBF700C60D1D /* XCRemoteSwiftPackageReference "iOSDropDown" */,
+				C30220062D8AF44300910A03 /* XCRemoteSwiftPackageReference "Localize-Swift" */,
 			);
 			productRefGroup = C341D10D2D888FA500F6D859 /* Products */;
 			projectDirPath = "";
@@ -342,6 +353,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C341D11C2D888FA600F6D859 /* LaunchScreen.storyboard in Resources */,
+				C30B6C392D8B34E400BC4498 /* Localizable.strings in Resources */,
 				C3FEBB7E2D89D95200C60D1D /* services.json in Resources */,
 				C341D1192D888FA600F6D859 /* Assets.xcassets in Resources */,
 				C341D1172D888FA500F6D859 /* Main.storyboard in Resources */,
@@ -417,10 +429,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		C30B6C3B2D8B34E400BC4498 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C30B6C3A2D8B34E400BC4498 /* ar */,
+				C30B6C3C2D8B34E700BC4498 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		C341D1152D888FA500F6D859 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				C341D1162D888FA500F6D859 /* Base */,
+				C30220042D8AF30D00910A03 /* ar */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -429,6 +451,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				C341D11B2D888FA600F6D859 /* Base */,
+				C30220052D8AF30D00910A03 /* ar */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -440,6 +463,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -501,6 +525,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -740,6 +765,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		C30220062D8AF44300910A03 /* XCRemoteSwiftPackageReference "Localize-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/Localize-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.2.0;
+			};
+		};
 		C341D13F2D888FF100F6D859 /* XCRemoteSwiftPackageReference "ReSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReSwift/ReSwift.git";
@@ -767,6 +800,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		C30220072D8AF44300910A03 /* Localize_Swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C30220062D8AF44300910A03 /* XCRemoteSwiftPackageReference "Localize-Swift" */;
+			productName = Localize_Swift;
+		};
 		C3FEBB6A2D88931100C60D1D /* ReSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C341D13F2D888FF100F6D859 /* XCRemoteSwiftPackageReference "ReSwift" */;
