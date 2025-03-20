@@ -115,10 +115,13 @@ class SendMoneyViewController: UIViewController, StoreSubscriber {
     //TODO: Save logic pending
     @objc private func sendButtonTapped() {
         view.endEditing(true)
-        let alertMessage = viewModel.validateInputs()
-        if !alertMessage.isEmpty {
-            showErrorAlert(title: "Validation Errors", message: alertMessage)
-        }
+//        let alertMessage = viewModel.validateInputs()
+//        if !alertMessage.isEmpty {
+//            showErrorAlert(title: "Validation Errors", message: alertMessage)
+//        }
+        
+        viewModel.addTransaction()
+        navigationController?.pushViewController(TransactionListViewController(), animated: true)
     }
     @objc private func textFieldDidChange(_ textField: UITextField) {
         let fieldName = viewModel.getRequiredFields()[textField.tag].name

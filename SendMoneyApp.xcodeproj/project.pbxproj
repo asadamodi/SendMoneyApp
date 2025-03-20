@@ -18,6 +18,13 @@
 		C341D1272D888FA700F6D859 /* SendMoneyAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C341D1262D888FA700F6D859 /* SendMoneyAppTests.swift */; };
 		C341D1312D888FA700F6D859 /* SendMoneyAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C341D1302D888FA700F6D859 /* SendMoneyAppUITests.swift */; };
 		C341D1332D888FA700F6D859 /* SendMoneyAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C341D1322D888FA700F6D859 /* SendMoneyAppUITestsLaunchTests.swift */; };
+		C348D2E42D8C0DBC0036E339 /* SendMoneyApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C348D2E22D8C0DBC0036E339 /* SendMoneyApp.xcdatamodeld */; };
+		C348D2E62D8C0E3D0036E339 /* TransactionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C348D2E52D8C0E3D0036E339 /* TransactionListViewController.swift */; };
+		C348D2E82D8C0FEA0036E339 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C348D2E72D8C0FEA0036E339 /* CoreDataManager.swift */; };
+		C3A5EFBD2D8C8B8400B39C14 /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A5EFBC2D8C8B8400B39C14 /* TransactionViewModel.swift */; };
+		C3A5EFC02D8C8C1300B39C14 /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A5EFBF2D8C8C1300B39C14 /* TransactionTableViewCell.swift */; };
+		C3A5EFC22D8C8CF900B39C14 /* TransactionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A5EFC12D8C8CF900B39C14 /* TransactionDetailViewController.swift */; };
+		C3A5EFC42D8C8DB800B39C14 /* TransactionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A5EFC32D8C8DB800B39C14 /* TransactionState.swift */; };
 		C3DC578F2D8AD9140081E18B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DC578E2D8AD9140081E18B /* Extensions.swift */; };
 		C3FEBB6B2D88931100C60D1D /* ReSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C3FEBB6A2D88931100C60D1D /* ReSwift */; };
 		C3FEBB6D2D88945C00C60D1D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FEBB6C2D88945C00C60D1D /* LoginViewController.swift */; };
@@ -68,6 +75,13 @@
 		C341D12C2D888FA700F6D859 /* SendMoneyAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SendMoneyAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C341D1302D888FA700F6D859 /* SendMoneyAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMoneyAppUITests.swift; sourceTree = "<group>"; };
 		C341D1322D888FA700F6D859 /* SendMoneyAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMoneyAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C348D2E32D8C0DBC0036E339 /* SendMoneyApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SendMoneyApp.xcdatamodel; sourceTree = "<group>"; };
+		C348D2E52D8C0E3D0036E339 /* TransactionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewController.swift; sourceTree = "<group>"; };
+		C348D2E72D8C0FEA0036E339 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		C3A5EFBC2D8C8B8400B39C14 /* TransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewModel.swift; sourceTree = "<group>"; };
+		C3A5EFBF2D8C8C1300B39C14 /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
+		C3A5EFC12D8C8CF900B39C14 /* TransactionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailViewController.swift; sourceTree = "<group>"; };
+		C3A5EFC32D8C8DB800B39C14 /* TransactionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionState.swift; sourceTree = "<group>"; };
 		C3DC578E2D8AD9140081E18B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C3FEBB6C2D88945C00C60D1D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C3FEBB6E2D88946F00C60D1D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -146,6 +160,7 @@
 				C341D1182D888FA600F6D859 /* Assets.xcassets */,
 				C341D11A2D888FA600F6D859 /* LaunchScreen.storyboard */,
 				C341D11D2D888FA600F6D859 /* Info.plist */,
+				C348D2E22D8C0DBC0036E339 /* SendMoneyApp.xcdatamodeld */,
 			);
 			path = SendMoneyApp;
 			sourceTree = "<group>";
@@ -180,6 +195,7 @@
 			children = (
 				C3FEBB6E2D88946F00C60D1D /* LoginViewModel.swift */,
 				C3FEBB792D889CE700C60D1D /* SendMoneyViewModel.swift */,
+				C3A5EFBC2D8C8B8400B39C14 /* TransactionViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -187,9 +203,12 @@
 		C341D1422D8890DC00F6D859 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C3A5EFBE2D8C8BEF00B39C14 /* TransactionTableViewCell */,
 				C3FEBB802D89E62F00C60D1D /* SendMoneyTableViewCell */,
 				C3FEBB6C2D88945C00C60D1D /* LoginViewController.swift */,
 				C3FEBB7B2D889D1F00C60D1D /* SendMoneyViewController.swift */,
+				C348D2E52D8C0E3D0036E339 /* TransactionListViewController.swift */,
+				C3A5EFC12D8C8CF900B39C14 /* TransactionDetailViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -198,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				C3FEBB772D889C7600C60D1D /* AppState.swift */,
+				C3A5EFC32D8C8DB800B39C14 /* TransactionState.swift */,
 			);
 			path = Redux;
 			sourceTree = "<group>";
@@ -211,10 +231,19 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		C3A5EFBE2D8C8BEF00B39C14 /* TransactionTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C3A5EFBF2D8C8C1300B39C14 /* TransactionTableViewCell.swift */,
+			);
+			path = TransactionTableViewCell;
+			sourceTree = "<group>";
+		};
 		C3DC578D2D8AD9000081E18B /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				C3DC578E2D8AD9140081E18B /* Extensions.swift */,
+				C348D2E72D8C0FEA0036E339 /* CoreDataManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -384,15 +413,22 @@
 			files = (
 				C3FEBB7C2D889D1F00C60D1D /* SendMoneyViewController.swift in Sources */,
 				C3FEBB6D2D88945C00C60D1D /* LoginViewController.swift in Sources */,
+				C3A5EFC42D8C8DB800B39C14 /* TransactionState.swift in Sources */,
+				C3A5EFC02D8C8C1300B39C14 /* TransactionTableViewCell.swift in Sources */,
 				C3FEBB7A2D889CE700C60D1D /* SendMoneyViewModel.swift in Sources */,
 				C341D1142D888FA500F6D859 /* ViewController.swift in Sources */,
 				C3FEBB782D889C7600C60D1D /* AppState.swift in Sources */,
 				C341D1102D888FA500F6D859 /* AppDelegate.swift in Sources */,
 				C3FEBB832D89E64B00C60D1D /* SendMoneyTableViewCell.swift in Sources */,
 				C3FEBB6F2D88946F00C60D1D /* LoginViewModel.swift in Sources */,
+				C348D2E42D8C0DBC0036E339 /* SendMoneyApp.xcdatamodeld in Sources */,
 				C341D1122D888FA500F6D859 /* SceneDelegate.swift in Sources */,
+				C3A5EFC22D8C8CF900B39C14 /* TransactionDetailViewController.swift in Sources */,
+				C348D2E62D8C0E3D0036E339 /* TransactionListViewController.swift in Sources */,
 				C3DC578F2D8AD9140081E18B /* Extensions.swift in Sources */,
+				C348D2E82D8C0FEA0036E339 /* CoreDataManager.swift in Sources */,
 				C3FEBB762D889C4700C60D1D /* Service.swift in Sources */,
+				C3A5EFBD2D8C8B8400B39C14 /* TransactionViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -821,6 +857,19 @@
 			productName = iOSDropDown;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		C348D2E22D8C0DBC0036E339 /* SendMoneyApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C348D2E32D8C0DBC0036E339 /* SendMoneyApp.xcdatamodel */,
+			);
+			currentVersion = C348D2E32D8C0DBC0036E339 /* SendMoneyApp.xcdatamodel */;
+			path = SendMoneyApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C341D1042D888FA500F6D859 /* Project object */;
 }

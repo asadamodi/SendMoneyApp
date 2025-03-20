@@ -6,7 +6,8 @@
 //
 
 import Foundation
-//import ReSwift
+import ReSwift
+import CoreData
 
 class ServiceViewModel {
     var services: [Service] = []
@@ -62,5 +63,8 @@ class ServiceViewModel {
             }
         }
         return alertMessage
+    }
+    func addTransaction() {
+        CoreDataManager.shared.createTransaction(serviceName: "Bank Transfer", providerName: "ABC Bank", amount: 500.0, providerId: "101", reqFields: ["Bank Account Number": "1234567890","First name": "Tony","Last name": "Stark"])
     }
 }
